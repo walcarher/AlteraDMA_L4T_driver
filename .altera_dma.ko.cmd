@@ -1,0 +1,1 @@
+cmd_/home/nvidia/AN829_driver/altera_dma.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/nvidia/AN829_driver/altera_dma.ko /home/nvidia/AN829_driver/altera_dma.o /home/nvidia/AN829_driver/altera_dma.mod.o
