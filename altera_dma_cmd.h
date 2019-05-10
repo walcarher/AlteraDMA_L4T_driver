@@ -3,7 +3,7 @@
 
 #define ALTERA_DMA_DRIVER_VERSION "2.02"
 
-#define ALTERA_DMA_DID 0xE003
+#define ALTERA_DMA_DID 0xe003
 #define ALTERA_DMA_VID 0x1172
 
 #define ALTERA_CMD_START_DMA            1

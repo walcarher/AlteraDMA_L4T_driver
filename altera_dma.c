@@ -800,7 +800,9 @@ static int __init altera_pci_probe(struct pci_dev *dev, const struct pci_device_
         rc = -ENOMEM;
         goto err_wr_table;
     }
+    // TEST THIS /////////////////////////////////////////////////////////////////////////////////
     bk_ptr->numpages = (PAGE_SIZE >= MAX_NUM_DWORDS*4) ? 1 : (int)((MAX_NUM_DWORDS*4)/PAGE_SIZE);
+    printk(KERN_DEBUG ALTERA_DMA_DRIVER_NAME " %d", (int)bk_ptr->numpages);
     bk_ptr->rp_rd_buffer_virt_addr = pci_alloc_consistent(dev, PAGE_SIZE*bk_ptr->numpages, &bk_ptr->rp_rd_buffer_bus_addr);
     if (!bk_ptr->rp_rd_buffer_virt_addr) {
         rc = -ENOMEM;

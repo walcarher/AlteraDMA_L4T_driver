@@ -42,7 +42,7 @@
 #define DESC_CTRLLER_BASE               0x0000
 #define CTL_STS_BITS                    0x0100
 #define TIMEOUT_THRESH                  0xFFFF
-#define MAX_NUM_DWORDS                  0x7FFFF//4096
+#define MAX_NUM_DWORDS                  0xFFFF//0x7FFFF//4096
 
 //Arria 10
 #ifdef ARRIA10
@@ -59,15 +59,16 @@
 #endif
 
 //Cyclone 10
+//This addresses must be modified depending on the on-chip address, off-chip (DDR3) base, BAR0 rd and wr base 
 #ifdef CYCLONE10
 #warning "Defined CYCLONE10 Sucessful"
-#define ONCHIP_MEM_BASE                 	0x40000000
-#define ONCHIP_MEM_DESC_MEM_BASE        	0x40000000
-#define OFFCHIP_MEM_BASE			0x00000000
-#define RD_CTRL_BUF_BASE_LOW			0x80000000
-#define RD_CTRL_BUF_BASE_HI			0x80001FFF
-#define WR_CTRL_BUF_BASE_LOW			0x80002000
-#define WR_CTRL_BUF_BASE_HI			0x80003FFF
+#define ONCHIP_MEM_BASE                 	0x08000000 //0x40000000
+#define ONCHIP_MEM_DESC_MEM_BASE        	0x08000000 //0x40000000
+#define OFFCHIP_MEM_BASE			0x00000000 //0x00000000
+#define RD_CTRL_BUF_BASE_LOW			0x08010000 //0x80000000
+#define RD_CTRL_BUF_BASE_HI			0x08011FFF //0x80001FFF
+#define WR_CTRL_BUF_BASE_LOW			0x08012000 //0x80002000
+#define WR_CTRL_BUF_BASE_HI			0x08013FFF //0x80003FFF
 #define BAR 2
 #define DMAMASK 64
 #endif
